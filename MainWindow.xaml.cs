@@ -23,6 +23,7 @@ namespace TimeLord_MVVM_Kylosov
         public MainWindow()
         {
             InitializeComponent();
+            frame.Navigate(new View.Main());
         }
     }
 }
