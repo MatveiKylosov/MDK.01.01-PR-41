@@ -18,6 +18,7 @@ namespace TimeLord_MVVM_Kylosov.ViewModell
             Timer.Tick += Timer_Tick;
             Timer.Start();
         }
+
         private void Timer_Tick(object sender, System.EventArgs e)
         {
             if (StopWatch.Work) 
