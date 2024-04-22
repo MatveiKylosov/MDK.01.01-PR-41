@@ -23,10 +23,16 @@ namespace TimeLord_MVVM_Kylosov
         public MainWindow()
         {
             InitializeComponent();
-            if(true)
-                frame.Navigate(new View.TimerPage());
-            else
-                frame.Navigate(new View.Main());
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new View.Main());
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            frame.Navigate(new View.TimerPage());
         }
     }
 }

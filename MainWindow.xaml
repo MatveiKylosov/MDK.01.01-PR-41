@@ -8,5 +8,7 @@
         Title="Управление временем" Height="450" Width="800" MinHeight="450" MinWidth="800">
     <Grid>
         <Frame x:Name="frame" NavigationUIVisibility="Hidden"/>
+        <Button Width="100" Height="30" Content="Таймер" VerticalAlignment="Top" HorizontalAlignment="Right" Click="Button_Click_1"/>
+        <Button Width="100" Height="30" Content="Секундомер" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,0,115,0" Click="Button_Click"/>
     </Grid>
 </Window>
