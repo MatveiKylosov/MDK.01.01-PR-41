@@ -7,22 +7,22 @@ namespace TimeLord_MVVM_Kylosov.ViewModell
 {
     public class VMStopwatch : INotifyPropertyChanged
     {
-        public Stopwatch StopWatch { get; set; }
+        public Stopwatch Stopwatch { get; set; }
         private DispatcherTimer Timer = new DispatcherTimer()
         {
             Interval = new System.TimeSpan(0, 0, 1)
         };
         public VMStopwatch()
         {
-            StopWatch = new Stopwatch() { Work = false, Time = 0 };
+            Stopwatch = new Stopwatch() { Work = false, Time = 0 };
             Timer.Tick += Timer_Tick;
             Timer.Start();
         }
 
         private void Timer_Tick(object sender, System.EventArgs e)
         {
-            if (StopWatch.Work) 
-                StopWatch.Time++;
+            if (Stopwatch.Work) 
+                Stopwatch.Time++;
         }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
