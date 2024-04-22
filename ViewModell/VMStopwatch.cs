@@ -12,10 +12,13 @@ namespace TimeLord_MVVM_Kylosov.ViewModell
         {
             Interval = new System.TimeSpan(0, 0, 1)
         };
-        public VMStopwatch()
+        public VMStopwatch(bool timerj)
         {
             Stopwatch = new Stopwatch() { Work = false, Time = 0 };
-            Timer.Tick += Timer_Tick;
+            if(timerj)
+                Timer.Tick += Timer_TickJ;
+            else
+                Timer.Tick += Timer_Tick;
             Timer.Start();
         }
 
@@ -24,6 +27,11 @@ namespace TimeLord_MVVM_Kylosov.ViewModell
             if (Stopwatch.Work) 
                 Stopwatch.Time++;
         }
+        private void Timer_TickJ(object sender, System.EventArgs e)
+        {
+            if (Stopwatch.Work)
+                Stopwatch.Time--;
+        }
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
@@ -31,5 +39,6 @@ namespace TimeLord_MVVM_Kylosov.ViewModell
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
             
         }
+
     }
 }

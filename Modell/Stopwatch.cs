@@ -91,5 +91,36 @@ namespace TimeLord_MVVM_Kylosov.Modell
                     }));
             }
         }
+
+
+        private RelayCommand setTimeCommand;
+        public RelayCommand SetTimeCommand
+        {
+            get
+            {
+                return setTimeCommand ??
+                    (setTimeCommand = new RelayCommand(obj =>
+                    {
+                        Time = SetTime;
+                        if (Work == false)
+                        {
+                            Interval.Clear();
+                            Work = true;
+                            TextButton = "Стоп";
+                        }
+                        else
+                        {
+                            Work = false;
+                            TextButton = "Начать";
+                        }
+                    }));
+            }
+        }
+        private int setTime;
+        public int SetTime
+        {
+            get { return setTime; }
+            set { setTime = value; OnPropertyChanged("SetTime"); }
+        }
     }
 }

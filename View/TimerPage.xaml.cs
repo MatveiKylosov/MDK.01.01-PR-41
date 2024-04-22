@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -13,20 +11,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace TimeLord_MVVM_Kylosov
+namespace TimeLord_MVVM_Kylosov.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для TimerPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class TimerPage : Page
     {
-        public MainWindow()
+        public TimerPage()
         {
             InitializeComponent();
-            if(true)
-                frame.Navigate(new View.TimerPage());
-            else
-                frame.Navigate(new View.Main());
+            DataContext = new ViewModell.VMStopwatch(true);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace TimeLord_MVVM_Kylosov.View
         public Main()
         {
             InitializeComponent();
-            DataContext = new ViewModell.VMStopwatch();
+            DataContext = new ViewModell.VMStopwatch(false);
         }
     }
 }
